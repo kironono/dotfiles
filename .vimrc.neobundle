@@ -28,6 +28,7 @@ NeoBundle 'Shougo/neosnippet'
 " カラースキーマ
 " ---------------
 NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'jonathanfilip/vim-lucius'
 
 
 " -------------
