@@ -1,0 +1,11 @@
+[user]
+	name = Junichi Kakisako
+	email = kilo.sw@gmail.com
+[core]
+	pager = lv -c
+	editor = vim
+[color]
+	ui = auto
+[alias]
+	st = status
+	ci = commit
