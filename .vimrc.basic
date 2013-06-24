@@ -56,6 +56,17 @@ set novisualbell
 " デフォルト不可視文字は美しくないのでUnicodeで綺麗に
 set listchars=tab:▸\ ,trail:\ ,extends:»,precedes:«,nbsp:%,eol:↲
 
+augroup highlightIdegraphicSpace
+  autocmd!
+  autocmd Colorscheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen guibg=DarkGreen
+  autocmd VimEnter,WinEnter * match IdeographicSpace /　/
+augroup END
+
+augroup highlightSpecialKey
+  autocmd!
+  autocmd ColorScheme * highlight SpecialKey term=underline ctermbg=DarkRed guibg=DarkRed
+augroup END
+
 
 "------------------
 " マクロ・キー設定
@@ -126,19 +137,19 @@ function! s:mkdir(dir, force)
 endfunction
 autocmd MyAutoCmd BufWritePre * call s:mkdir(expand('<afile>:p:h'), v:cmdbang)
 
-"" vim 起動時のみカレントディレクトリを開いたファイルの親ディレクトリに指定
-"autocmd MyAutoCmd VimEnter * call s:ChangeCurrentDir('', '')
-"function! s:ChangeCurrentDir(directory, bang)
-"    if a:directory == ''
-"        lcd %:p:h
-"    else
-"        execute 'lcd' . a:directory
-"    endif
-"
-"    if a:bang == ''
-"        pwd
-"    endif
-"endfunction
+" vim 起動時のみカレントディレクトリを開いたファイルの親ディレクトリに指定
+autocmd MyAutoCmd VimEnter * call s:ChangeCurrentDir('', '')
+function! s:ChangeCurrentDir(directory, bang)
+    if a:directory == ''
+        lcd %:p:h
+    else
+        execute 'lcd' . a:directory
+    endif
+
+    if a:bang == ''
+        pwd
+    endif
+endfunction
 
 " ~/.vimrc.localが存在する場合のみ設定を読み込む
 let s:local_vimrc = expand('~/.vimrc.local')
