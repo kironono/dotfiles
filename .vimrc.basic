@@ -77,6 +77,12 @@ inoremap jj <Esc>
 " ESCを二回押すことでハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
 
+" スペース + cd で現在のバッファにカレントディレクトリ変更
+nmap <Space>cd :cd %:h<CR>
+
+" スペース + bb でバッファ一覧を表示
+nmap <Space>bb :ls<CR>:buffer
+
 " カーソル下の単語を * で検索
 vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<CR><CR>
 
