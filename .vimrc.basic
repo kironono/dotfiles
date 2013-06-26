@@ -53,6 +53,9 @@ set laststatus=2
 set t_vb=
 set novisualbell
 
+" 補完の表示方法
+set wildmode=list,longest
+
 " デフォルト不可視文字は美しくないのでUnicodeで綺麗に
 set listchars=tab:▸\ ,trail:\ ,extends:»,precedes:«,nbsp:%,eol:↲
 
@@ -124,6 +127,9 @@ nnoremap <silent> [toggle]s :setl spell!<CR>:setl spell?<CR>
 nnoremap <silent> [toggle]l :setl list!<CR>:setl list?<CR>
 nnoremap <silent> [toggle]t :setl expandtab!<CR>:setl expandtab?<CR>
 nnoremap <silent> [toggle]w :setl wrap!<CR>:setl wrap?<CR>
+
+" ファイルとバッファ
+nnoremap <C-U><C-U> :Unite buffer file_mru<CR>
 
 " make, grep などのコマンド後に自動的にQuickFixを開く
 autocmd MyAutoCmd QuickfixCmdPost make,grep,grepadd,vimgrep copen
