@@ -54,7 +54,7 @@ set t_vb=
 set novisualbell
 
 " 補完の表示方法
-set wildmode=list,longest
+set wildmode=longest,list
 
 " デフォルト不可視文字は美しくないのでUnicodeで綺麗に
 set listchars=tab:▸\ ,trail:\ ,extends:»,precedes:«,nbsp:%,eol:↲

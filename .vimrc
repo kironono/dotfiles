@@ -16,3 +16,6 @@ syntax enable
 set background=dark
 let g:lucius_no_term_bg = 1
 colorscheme lucius
+
+" python-mode
+let g:pymode_folding = 0

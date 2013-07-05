@@ -35,7 +35,8 @@ NeoBundle 'jonathanfilip/vim-lucius'
 " シンタックス
 " -------------
 " python
-NeoBundle 'yuroyoro/vim-python'
+" NeoBundle 'yuroyoro/vim-python'
+NeoBundle 'klen/python-mode'
 
 
 " ---------------
