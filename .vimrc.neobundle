@@ -37,7 +37,7 @@ NeoBundle 'jonathanfilip/vim-lucius'
 " python
 " NeoBundle 'yuroyoro/vim-python'
 NeoBundle 'klen/python-mode'
-
+NeoBundle 'pangloss/vim-javascript'
 
 " ---------------
 " ユーティリティ

@@ -19,3 +19,5 @@ colorscheme lucius
 
 " python-mode
 let g:pymode_folding = 0
+
+au FileType javascript set ts=2 sw=2 expandtab
