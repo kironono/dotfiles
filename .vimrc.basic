@@ -79,6 +79,9 @@ set scrolloff=5
 " 入力モード中に素早くjjと入力した場合はESCとみなす
 inoremap jj <Esc>
 
+inoremap " ""<Left>
+inoremap ' ''<Left>
+
 " ESCを二回押すことでハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
 
@@ -132,9 +135,9 @@ nnoremap <silent> [toggle]w :setl wrap!<CR>:setl wrap?<CR>
 nnoremap <silent> [toggle]T :setl paste!<CR>:set paste?<CR>
 
 " neocomplcache 改行で補完確定
-inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "<CR>"
+" inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "<CR>"
 " neocomplecache ESCで補完キャンセルだがinsertモード継続
-inoremap <expr><ESC> pumvisible() ? neocomplcache#cancel_popup() : "<ESC>"
+" inoremap <expr><ESC> pumvisible() ? neocomplcache#cancel_popup() : "<ESC>"
 
 " ファイルとバッファ
 nnoremap <C-U><C-U> :Unite buffer file_mru<CR>
