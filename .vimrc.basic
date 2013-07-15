@@ -70,6 +70,8 @@ augroup highlightSpecialKey
   autocmd ColorScheme * highlight SpecialKey term=underline ctermbg=DarkRed guibg=DarkRed
 augroup END
 
+set scrolloff=5
+
 
 "------------------
 " マクロ・キー設定
@@ -127,6 +129,12 @@ nnoremap <silent> [toggle]s :setl spell!<CR>:setl spell?<CR>
 nnoremap <silent> [toggle]l :setl list!<CR>:setl list?<CR>
 nnoremap <silent> [toggle]t :setl expandtab!<CR>:setl expandtab?<CR>
 nnoremap <silent> [toggle]w :setl wrap!<CR>:setl wrap?<CR>
+nnoremap <silent> [toggle]T :setl paste!<CR>:set paste?<CR>
+
+" neocomplcache 改行で補完確定
+inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "<CR>"
+" neocomplecache ESCで補完キャンセルだがinsertモード継続
+inoremap <expr><ESC> pumvisible() ? neocomplcache#cancel_popup() : "<ESC>"
 
 " ファイルとバッファ
 nnoremap <C-U><C-U> :Unite buffer file_mru<CR>
