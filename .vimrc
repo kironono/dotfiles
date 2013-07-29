@@ -21,3 +21,6 @@ colorscheme lucius
 let g:pymode_folding = 0
 
 au FileType javascript set ts=2 sw=2 expandtab
+au FileType html set ts=2 sw=2 expandtab
+
+autocmd BufNewFile,BufRead *.jinja2 set filetype=html

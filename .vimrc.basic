@@ -142,6 +142,9 @@ nnoremap <silent> [toggle]T :setl paste!<CR>:set paste?<CR>
 " ファイルとバッファ
 nnoremap <C-U><C-U> :Unite buffer file_mru<CR>
 
+" paste モードをトグル
+set pastetoggle=<C-E>
+
 " make, grep などのコマンド後に自動的にQuickFixを開く
 autocmd MyAutoCmd QuickfixCmdPost make,grep,grepadd,vimgrep copen
 
