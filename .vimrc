@@ -19,6 +19,8 @@ colorscheme lucius
 
 " python-mode
 let g:pymode_folding = 0
+let g:pymode_rope = 0
+let g:pymode_lint_checker = "pyflakes,pep8"
 
 au FileType javascript set ts=2 sw=2 expandtab
 au FileType html set ts=2 sw=2 expandtab
