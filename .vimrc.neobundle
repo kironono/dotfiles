@@ -47,6 +47,8 @@ NeoBundle 'pangloss/vim-javascript'
 " ---------------
 " ステータスラインの見た目をかっこ良くする
 NeoBundle 'Lokaltog/vim-powerline'
+" コメントアウト支援
+NeoBundle 'tomtom/tcomment_vim'
 
 
 " ------
