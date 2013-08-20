@@ -16,6 +16,7 @@ syntax enable
 set background=dark
 let g:lucius_no_term_bg = 1
 colorscheme lucius
+let g:airline_theme = "bubblegum"
 
 " python-mode
 let g:pymode_folding = 0
