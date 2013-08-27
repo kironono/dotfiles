@@ -19,9 +19,11 @@ colorscheme lucius
 let g:airline_theme = "bubblegum"
 
 " python-mode
+let g:pymode_syntax_all = 1
 let g:pymode_folding = 0
 let g:pymode_rope = 0
 let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint_ignore = "E501"
 
 au FileType javascript set ts=2 sw=2 expandtab
 au FileType html set ts=2 sw=2 expandtab
