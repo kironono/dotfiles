@@ -48,8 +48,8 @@ set wrap                " 長いテキストの折り返し
 set textwidth=0         " 自動的に改行が入るのを無効化
 set colorcolumn=80      " その代わり80文字目にラインを入れる
 set cursorline          " カーソル行にラインを表示
-set laststatus=2
-set showtabline=2
+set laststatus=2        " ステータスラインを常に表示
+set showtabline=2       " タブラインを常に表示
 set ambiwidth=double
 
 " スクリーンベルを無効化
@@ -79,6 +79,9 @@ set scrolloff=5
 "------------------
 " マクロ・キー設定
 "------------------
+" キーマップリーダー
+let mapleader = ","
+
 " 入力モード中に素早くjjと入力した場合はESCとみなす
 inoremap jj <Esc>
 
@@ -90,9 +93,6 @@ nmap <silent> <Esc><Esc> :nohlsearch<CR>
 
 " スペース + cd で現在のバッファにカレントディレクトリ変更
 nmap <Space>cd :cd %:h<CR>
-
-" スペース + bb でバッファ一覧を表示
-nmap <Space>bb :ls<CR>:buffer
 
 " カーソル下の単語を * で検索
 vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<CR><CR>
@@ -117,36 +117,16 @@ nnoremap <Tab> %
 vnoremap <Tab> %
 
 " Ctrl + hjkl でウィンドウ間を移動
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" Shift + 矢印でウィンドウサイズを変更
-nnoremap <S-Left>  <C-w><<CR>
-nnoremap <S-Right> <C-w>><CR>
-nnoremap <S-Up>    <C-w>-<CR>
-nnoremap <S-Down>  <C-w>+<CR>
-
-" T + ? で各種設定をトグル
-nnoremap [toggle] <Nop>
-nmap T [toggle]
-nnoremap <silent> [toggle]s :setl spell!<CR>:setl spell?<CR>
-nnoremap <silent> [toggle]l :setl list!<CR>:setl list?<CR>
-nnoremap <silent> [toggle]t :setl expandtab!<CR>:setl expandtab?<CR>
-nnoremap <silent> [toggle]w :setl wrap!<CR>:setl wrap?<CR>
-nnoremap <silent> [toggle]T :setl paste!<CR>:set paste?<CR>
-
-" neocomplcache 改行で補完確定
-" inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "<CR>"
-" neocomplecache ESCで補完キャンセルだがinsertモード継続
-" inoremap <expr><ESC> pumvisible() ? neocomplcache#cancel_popup() : "<ESC>"
+" map <C-h> <C-w>h
+" map <C-j> <C-w>j
+" map <C-k> <C-w>k
+" map <C-l> <C-w>l
 
 " ファイルとバッファ
 nnoremap <C-U><C-U> :Unite buffer file_mru<CR>
 
 " paste モードをトグル
-set pastetoggle=<C-E>
+set pastetoggle=<F2>
 
 " make, grep などのコマンド後に自動的にQuickFixを開く
 autocmd MyAutoCmd QuickfixCmdPost make,grep,grepadd,vimgrep copen
