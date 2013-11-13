@@ -1,3 +1,8 @@
+[ui]
+username = Junichi Kakisako <kilo.sw@gmail.com>
+editor = vim
+merge = vimdiff
+
 [defaults]
 cdiff = -q
 
@@ -8,6 +13,7 @@ hgext.convert =
 color =
 graphlog =
 mq =
+hgflow = ~/.dotfiles/hg/hgflow.py
 
 [extdiff]
 cmd.cdiff = colordiff
@@ -27,3 +33,6 @@ branches.current = green
 qseries.applied = blue bold underline
 qseries.unapplied = black bold white_background
 qseries.missing = red bold
+
+[alias]
+svnlog = log --template="------------------------------------------------------------------------\n{rev}:{node|short} {if(svnrev, '(r{svnrev}) ')}| {author|user} | {date|localdate|isodatesec} | {branch}\n\n{desc}\n\n"
