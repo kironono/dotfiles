@@ -14,6 +14,7 @@ color =
 graphlog =
 mq =
 hgflow = ~/.dotfiles/hg/hgflow.py
+backlog = ~/.dotfiles/hg/backlog.py
 
 [extdiff]
 cmd.cdiff = colordiff
