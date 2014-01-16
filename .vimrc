@@ -10,6 +10,7 @@ let g:neocomplcache_enable_at_startup = 1
 syntax enable
 
 " colorsheme
+set t_Co=256
 set background=dark
 let g:lucius_no_term_bg = 1
 colorscheme lucius
