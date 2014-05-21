@@ -25,7 +25,7 @@ set infercase           " 補完時に大文字小文字を区別しない
 set hidden              " バッファを閉じる代わりに隠す（Undo履歴を残すため）
 set switchbuf=useopen   " 新しく開く代わりにすでに開いてあるバッファを開く
 set showmatch           " 対応する括弧などをハイライト表示する
-set matchtime=3         " 対応括弧のハイライト表示を3秒にする
+set matchtime=1         " 対応括弧のハイライト表示を3秒にする
 
 " 対応括弧に'<'と'>'のペアを追加
 set matchpairs& matchpairs+=<:>
@@ -50,7 +50,8 @@ set colorcolumn=80      " その代わり80文字目にラインを入れる
 set cursorline          " カーソル行にラインを表示
 set laststatus=2        " ステータスラインを常に表示
 set showtabline=2       " タブラインを常に表示
-set ambiwidth=double
+set scrolloff=5         " スクロールのオフセット
+set ambiwidth=double    " 文脈によって文字幅の異なる文字は全角にする
 
 " スクリーンベルを無効化
 set t_vb=
@@ -62,18 +63,18 @@ set wildmode=longest,list
 " デフォルト不可視文字は美しくないのでUnicodeで綺麗に
 set listchars=tab:▸\ ,trail:\ ,extends:»,precedes:«,nbsp:%,eol:↲
 
+" 全角スペースをハイライトする
 augroup highlightIdegraphicSpace
   autocmd!
   autocmd Colorscheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen guibg=DarkGreen
   autocmd VimEnter,WinEnter * match IdeographicSpace /　/
 augroup END
 
+" SpecialKeyをハイライトする
 augroup highlightSpecialKey
   autocmd!
   autocmd ColorScheme * highlight SpecialKey term=underline ctermbg=DarkRed guibg=DarkRed
 augroup END
-
-set scrolloff=5
 
 
 "------------------
@@ -85,6 +86,7 @@ let mapleader = ","
 " 入力モード中に素早くjjと入力した場合はESCとみなす
 inoremap jj <Esc>
 
+" クオートを入力した場合、対応するクオートを自動で入力
 inoremap " ""<Left>
 inoremap ' ''<Left>
 
@@ -121,6 +123,16 @@ vnoremap <Tab> %
 " map <C-j> <C-w>j
 " map <C-k> <C-w>k
 " map <C-l> <C-w>l
+
+nnoremap <Leader>k <C-w><C-+>
+nnoremap <Leader>j <C-w><C-->
+nnoremap <Leader>h <C-w><C-<>
+nnoremap <Leader>l <C-w><C->>
+
+nnoremap <Leader>t :tabnew<CR>
+nnoremap <Leader>w :tabclose<CR>
+nnoremap <Leader>n :tabnext<CR>
+nnoremap <Leader>p :tabprev<CR>
 
 " ファイルとバッファ
 nnoremap <C-U><C-U> :Unite buffer file_mru<CR>

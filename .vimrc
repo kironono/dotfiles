@@ -1,5 +1,4 @@
-set nocompatible
-
+source ~/.dotfiles/.vimrc.init
 source ~/.dotfiles/.vimrc.neobundle
 source ~/.dotfiles/.vimrc.basic
 

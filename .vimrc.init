@@ -1,0 +1,2 @@
+" Vimのデフォルト設定を利用する
+set nocompatible
