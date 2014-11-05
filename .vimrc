@@ -20,7 +20,7 @@ let g:pymode_syntax_all = 1
 let g:pymode_folding = 0
 let g:pymode_rope = 0
 let g:pymode_lint_checker = "pyflakes,pep8"
-let g:pymode_lint_ignore = "E501,W0401"
+" let g:pymode_lint_ignore = "E501,W0401"
 let g:pymode_virtualenv = 0
 
 au FileType javascript set ts=2 sw=2 expandtab

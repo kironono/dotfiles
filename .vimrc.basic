@@ -183,4 +183,10 @@ if filereadable(s:local_vimrc)
     execute 'source ' . s:local_vimrc
 endif
 
-
+" vimdiffで起動した際自動的に単語単位の差分(diffchar.vim)を有効にする
+if &diff
+  augroup enable_diffchar
+    autocmd!
+    autocmd VimEnter * execute "%SDChar"
+  augroup END
+endif
