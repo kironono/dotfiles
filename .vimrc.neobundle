@@ -1,9 +1,19 @@
 filetype off
 
+if !1 | finish | endif
+
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/bundle/'))
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
 
 " NeoBundle自身をNeoBundleで管理させる
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -60,7 +70,10 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'vim-scripts/diffchar.vim'
 
 
-" インストールされていないプラグインのチェックおよびダウンロード
-NeoBundleCheck 
+call neobundle#end()
 
 filetype plugin indent on
+
+" インストールされていないプラグインのチェックおよびダウンロード
+NeoBundleCheck
+
