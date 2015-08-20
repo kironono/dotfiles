@@ -140,6 +140,9 @@ nnoremap <C-U><C-U> :Unite buffer file_mru<CR>
 " paste モードをトグル
 set pastetoggle=<F2>
 
+" NERDTreeをトグル
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
 " make, grep などのコマンド後に自動的にQuickFixを開く
 autocmd MyAutoCmd QuickfixCmdPost make,grep,grepadd,vimgrep copen
 

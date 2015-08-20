@@ -60,6 +60,8 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'bling/vim-airline'
 " コメントアウト支援
 NeoBundle 'tomtom/tcomment_vim'
+" NERDTree
+NeoBundle 'scrooloose/nerdtree'
 " wakatime
 NeoBundle 'wakatime/vim-wakatime'
 
