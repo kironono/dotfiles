@@ -55,6 +55,7 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
 " NeoBundle 'vim-css3-syntax'
 
+
 " ---------------
 " ユーティリティ
 " ---------------
@@ -65,6 +66,10 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'tomtom/tcomment_vim'
 " インデントに色をつける
 NeoBundle 'nathanaelkane/vim-indent-guides'
+" NERDTree
+NeoBundle 'scrooloose/nerdtree'
+" wakatime
+NeoBundle 'wakatime/vim-wakatime'
 
 
 " ------

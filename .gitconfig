@@ -2,7 +2,7 @@
 	name = Junichi Kakisako
 	email = kilo.sw@gmail.com
 [core]
-	pager = lv -c
+	pager = less
 	editor = vim
 [color]
 	ui = auto
