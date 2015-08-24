@@ -48,6 +48,9 @@ NeoBundle 'jonathanfilip/vim-lucius'
 " python
 " NeoBundle 'yuroyoro/vim-python'
 NeoBundle 'klen/python-mode'
+" ruby
+NeoBundle 'tpope/vim-endwise'
+" html
 NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
 " NeoBundle 'vim-css3-syntax'
@@ -60,6 +63,8 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'bling/vim-airline'
 " コメントアウト支援
 NeoBundle 'tomtom/tcomment_vim'
+" インデントに色をつける
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 
 " ------

@@ -15,6 +15,8 @@ let g:lucius_no_term_bg = 1
 colorscheme lucius
 let g:airline_theme = "bubblegum"
 
+let g:indent_guides_enable_on_vim_startup = 1
+
 " python-mode
 let g:pymode_syntax_all = 1
 let g:pymode_folding = 0
