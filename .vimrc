@@ -1,6 +1,7 @@
 source ~/.dotfiles/.vimrc.init
 source ~/.dotfiles/.vimrc.neobundle
 source ~/.dotfiles/.vimrc.basic
+source ~/.dotfiles/.vimrc.filetype
 
 " neocomplcache を起動時に有効化
 let g:neocomplcache_enable_at_startup = 1
@@ -30,10 +31,3 @@ let g:pymode_rope = 0
 let g:pymode_virtualenv = 1
 let g:pymode_lint_ignore = "E501,E711,E712,C901"
 let g:pymode_lint_on_fly = 0
-
-au FileType javascript set ts=2 sw=2 expandtab
-au FileType html set ts=2 sw=2 expandtab
-au FileType json set ts=2 sw=2 expandtab
-
-autocmd BufNewFile,BufRead *.jinja2 set filetype=html
-autocmd BufNewFile,BufRead *.tpl set filetype=html
