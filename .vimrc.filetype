@@ -2,6 +2,7 @@ autocmd FileType javascript set ts=2 sw=2 expandtab
 autocmd FileType html set ts=2 sw=2 expandtab
 autocmd FileType yaml set ts=2 sw=2 expandtab
 autocmd FileType json set ts=2 sw=2 expandtab
+autocmd FileType ruby set ts=2 sw=2 expandtab
 
 autocmd BufNewFile,BufRead *.jinja2 set filetype=html
 autocmd BufNewFile,BufRead *.tpl set filetype=html
