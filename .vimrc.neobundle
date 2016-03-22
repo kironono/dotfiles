@@ -55,14 +55,17 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
 " NeoBundle 'vim-css3-syntax'
 NeoBundle 'slim-template/vim-slim'
-
+" go
+NeoBundle 'fatih/vim-go'
+NeoBundle 'vim-jp/vim-go-extra'
 
 " ---------------
 " ユーティリティ
 " ---------------
 " ステータスラインの見た目をかっこ良くする
 " NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 " コメントアウト支援
 NeoBundle 'tomtom/tcomment_vim'
 " インデントに色をつける
