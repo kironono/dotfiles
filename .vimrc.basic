@@ -47,7 +47,7 @@ set number              " 行番号の表示
 set wrap                " 長いテキストの折り返し
 set textwidth=0         " 自動的に改行が入るのを無効化
 set colorcolumn=80      " その代わり80文字目にラインを入れる
-set cursorline          " カーソル行にラインを表示
+" set cursorline          " カーソル行にラインを表示
 set laststatus=2        " ステータスラインを常に表示
 set showtabline=2       " タブラインを常に表示
 set scrolloff=5         " スクロールのオフセット
