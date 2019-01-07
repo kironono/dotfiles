@@ -76,8 +76,8 @@ NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " NERDTree
 NeoBundle 'scrooloose/nerdtree'
-" agit.vim
-NeoBundle 'cohama/agit.vim'
+" vim-fugitive
+NeoBundle 'tpope/vim-fugitive'
 
 " ------
 " Unite
