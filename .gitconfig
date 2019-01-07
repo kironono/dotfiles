@@ -9,5 +9,7 @@
 [alias]
 	st = status
 	ci = commit
+	plog  = log --pretty='format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]' --date=iso
+	gplog = log --pretty='format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]' --date=iso --graph
 [push]
 	default = simple

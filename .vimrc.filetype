@@ -7,3 +7,4 @@ autocmd FileType sh set ts=4 sw=4 expandtab
 
 autocmd BufNewFile,BufRead *.jinja2 set filetype=html
 autocmd BufNewFile,BufRead *.tpl set filetype=html
+autocmd BufNewFile,BufRead *.json.jbuilder set filetype=ruby

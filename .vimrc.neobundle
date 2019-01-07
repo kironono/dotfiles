@@ -60,6 +60,8 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'vim-jp/vim-go-extra'
 " nginx
 NeoBundle 'vim-scripts/nginx.vim'
+" docker
+NeoBundle 'ekalinin/Dockerfile.vim'
 
 " ---------------
 " ユーティリティ
