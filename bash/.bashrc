@@ -10,3 +10,16 @@ GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
+
+
+fssh() {
+    local sshLoginHost
+    sshLoginHost=`cat ~/.ssh/config | grep -i ^host | awk '{print $2}' | fzf`
+
+    if [ "$sshLoginHost" = "" ]; then
+        # ex) Ctrl-C.
+        return 1
+    fi
+
+    ssh ${sshLoginHost}
+}
