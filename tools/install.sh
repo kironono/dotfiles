@@ -4,7 +4,7 @@ set -e
 
 # Default settings
 DOTFILES=${DOTFILES:-~/.dotfiles}
-REPO=${REPO:-kironono/ohmyzsh}
+REPO=${REPO:-kironono/dotfiles}
 REMOTE=${REMOTE:-https://github.com/${REPO}.git}
 BRANCH=${BRANCH:-master}
 

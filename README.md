@@ -3,7 +3,7 @@
 ## Install
 
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/kironono/dotfiles/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/kironono/dotfiles/develop/tools/install.sh)"
 ```
 
 
