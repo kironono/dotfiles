@@ -38,12 +38,14 @@ error() {
 }
 
 install_dotfiles() {
+	echo ${GREEN}"Installing dotfiles ..."${RESET}
+
 	if [ -d "$DOTFILES" ]; then
 		cat <<-EOF
 			${YELLOW}You already have dotfiles installed.${RESET}
 			You'll need to remove '$DOTFILES' if you want to reinstall.
 		EOF
-		exit 1
+		return
 	fi
 
 	umask g-w,o-w
@@ -59,7 +61,8 @@ install_dotfiles() {
 		}
 }
 
-install_zsh_plugins() {
+install_zinit() {
+	echo ${GREEN}"Installing zinit ..."${RESET}
 	if [ -d "$ZINIT_HOME/bin" ]; then
 		cat <<-EOF
 			${YELLOW}You already hove zinit installed.${RESET}
@@ -89,9 +92,22 @@ export DOTFILES=\"$DOTFILES\"
 main() {
 	setup_color
 
-	# install_dotfiles
-	install_zsh_plugins
+	install_dotfiles
+	install_zinit
 	setup_zsh
+
+	printf "${GREEN}"
+	cat <<-'EOF'
+		      _       _    __ _ _           
+		     | |     | |  / _(_) |          
+		   __| | ___ | |_| |_ _| | ___  ___ 
+		  / _` |/ _ \| __|  _| | |/ _ \/ __|
+		 | (_| | (_) | |_| | | | |  __/\__ \
+		(_)__,_|\___/ \__|_| |_|_|\___||___/
+		
+		... is now installed!
+	EOF
+	printf "${RESET}"
 }
 
 main "$@"
