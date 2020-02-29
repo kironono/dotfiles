@@ -18,21 +18,46 @@ setopt EXTENDED_HISTORY
 #
 export EDITOR=vim
 
-# compinit
-autoload -Uz compinit
-compinit
-
+#
 # colors
+#
 autoload -Uz colors
 colors
 
-zstyle ':completion:*' menu select
-setopt correct
+#
+# complement
+#
+autoload -Uz compinit
+compinit
 
-# vcs_info
-autoload -Uz vcs_info
+setopt correct
+zstyle ':completion:*' menu select
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+#
+# prompt
+#
+# %b branch
+# %a action
+# %c changes
+# %u uncommit
+# vcs_info
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{green}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{magenta}+"
+zstyle ':vcs_info:*' formats "%F{cyan}%c%u(%b)%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+
+precmd () { vcs_info }
+
+# prompt left
+PROMPT='%{$fg[green]%}[%n%{$fg[blue]%}@%m]%{$reset_color%}'
+PROMPT=$PROMPT' ${vcs_info_msg_0_}%{${fg[white]}%}%}$%{${reset_color}%} '
+# prompt right
+RPROMPT='%{${fg[blue]}%}[%~]%{${reset_color}%}'
 
 #
 # alias
@@ -41,26 +66,3 @@ alias ls='ls -G'
 alias ll='ls -alF'
 alias pwdc='pwd | tr -d "\n" | pbcopy'
 
-#
-# prompt
-#
-# %b ブランチ情報
-# %a アクション名(mergeなど)
-# %c changes
-# %u uncommit
-setopt prompt_subst
-zstyle ':vcs_info:git:*' check-for-changes true #formats 設定項目で %c,%u が使用可
-zstyle ':vcs_info:git:*' stagedstr "%F{green}!" #commit されていないファイルがある
-zstyle ':vcs_info:git:*' unstagedstr "%F{magenta}+" #add されていないファイルがある
-zstyle ':vcs_info:*' formats "%F{cyan}%c%u(%b)%f" #通常
-zstyle ':vcs_info:*' actionformats '[%b|%a]' #rebase 途中,merge コンフリクト等 formats 外の表示
-
-# プロンプト表示直前に vcs_info 呼び出し
-precmd () { vcs_info }
-
-# プロンプト（左）
-PROMPT='%{$fg[green]%}[%n%{$fg[blue]%}@%m]%{$reset_color%}'
-PROMPT=$PROMPT' ${vcs_info_msg_0_}%{${fg[white]}%}%}$%{${reset_color}%} '
-
-# プロンプト（右）
-RPROMPT='%{${fg[blue]}%}[%~]%{${reset_color}%}'
