@@ -1,12 +1,13 @@
 #!/bin/sh
 
-set -e
+set -ue
 
 # Default settings
 DOTFILES=${DOTFILES:-~/.dotfiles}
 REPO=${REPO:-kironono/dotfiles}
 REMOTE=${REMOTE:-https://github.com/${REPO}.git}
 BRANCH=${BRANCH:-develop}
+ZINIT_HOME=${ZINIT_HOME:-~/.zinit}
 
 
 setup_color() {
@@ -59,7 +60,17 @@ install_dotfiles() {
 }
 
 install_zsh_plugins() {
-	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+	if [ -d "$ZINIT_HOME/bin" ]; then
+		cat <<-EOF
+			${YELLOW}You already hove zinit installed.${RESET}
+		EOF
+		return
+	fi
+
+	if [ ! -d $ZINIT_HOME ]; then
+		mkdir ${ZINIT_HOME}
+	fi
+	git clone https://github.com/zdharma/zinit.git ${ZINIT_HOME}/bin
 }
 
 setup_zsh() {
