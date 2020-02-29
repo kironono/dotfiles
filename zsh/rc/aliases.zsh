@@ -1,10 +1,16 @@
 
 # list {{{
 alias ls='ls -G'
-alias ll='ls -alF'
-alias llb='ls -al'
+alias ll='ls -ltr'
+alias la="ls -lhAF"
+alias pd="pushd"
+alias po="popd"
 # }}}
 
 # paste {{{
 alias pwdc='pwd | tr -d "\n" | pbcopy'
+# }}}
+
+# network {{{
+alias gip='curl httpbin.org/ip'
 # }}}
