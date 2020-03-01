@@ -13,8 +13,8 @@ hgext.convert =
 color =
 graphlog =
 mq =
-hgflow = ~/.dotfiles/hg/hgflow.py
-backlog = ~/.dotfiles/hg/backlog.py
+hgflow = ~/.hg/extensions/hgflow.py
+backlog = ~/.hg/extensions/backlog.py
 
 [extdiff]
 cmd.cdiff = colordiff

@@ -1,3 +1,56 @@
+" vimrc:plugin {{{
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" ----------------
+" color and theme
+" ----------------
+Plug 'jonathanfilip/vim-lucius'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" ---------------------
+" syntax and highlight
+" ---------------------
+" indent
+Plug 'nathanaelkane/vim-indent-guides'
+" python
+Plug 'klen/python-mode'
+" ruby
+Plug 'tpope/vim-endwise'
+" html
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+" go
+Plug 'fatih/vim-go'
+Plug 'vim-jp/vim-go-extra'
+" rust
+Plug 'rust-lang/rust.vim'
+" nginx
+Plug 'vim-scripts/nginx.vim'
+" docker
+Plug 'ekalinin/Dockerfile.vim'
+
+" --------
+" Utility
+" --------
+" explorer
+Plug 'scrooloose/nerdtree'
+" comment
+Plug 'tomtom/tcomment_vim'
+" git
+Plug 'tpope/vim-fugitive'
+
+
+" Initialize plugin system
+call plug#end()
+" }}}
+
+
+" vimrc:basic {{{
 " release autogroup in MyAutoCmd
 augroup MyAutoCmd
   autocmd!
@@ -193,3 +246,58 @@ if &diff
     autocmd VimEnter * execute "%SDChar"
   augroup END
 endif
+" }}}
+
+
+" vimrc:filetype {{{
+autocmd FileType javascript set ts=2 sw=2 expandtab
+autocmd FileType html set ts=2 sw=2 expandtab
+autocmd FileType yaml set ts=2 sw=2 expandtab
+autocmd FileType json set ts=2 sw=2 expandtab
+autocmd FileType ruby set ts=2 sw=2 expandtab
+autocmd FileType sh set ts=4 sw=4 expandtab
+autocmd FileType rust set ts=4 sw=4 expandtab
+
+autocmd BufNewFile,BufRead *.jinja2 set filetype=html
+autocmd BufNewFile,BufRead *.tpl set filetype=html
+autocmd BufNewFile,BufRead *.jbuilder set filetype=ruby
+" }}}
+
+
+" vimrc:basic {{{
+" Vimのデフォルト設定を利用する
+set nocompatible
+
+" 矢印キーで入力するとA B C Dが入力される問題を解決
+" http://cohama.hateblo.jp/entry/20120129/1327817462
+imap OA <Up>
+imap OB <Down>
+imap OC <Right>
+imap OD <Left>
+
+" シンタックスハイライト
+syntax enable
+
+" colorsheme
+set t_Co=256
+set background=dark
+let g:lucius_no_term_bg = 1
+colorscheme lucius
+let g:airline_theme = "bubblegum"
+
+" vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_color_change_percent = 30
+let g:indent_guides_guide_size = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg = 238
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg = 237
+
+" python-mode
+let g:pymode_folding = 0
+let g:pymode_rope = 0
+let g:pymode_virtualenv = 1
+let g:pymode_lint_ignore = "E501,E711,E712,C901"
+let g:pymode_lint_on_fly = 0
+" }}}

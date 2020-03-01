@@ -73,20 +73,24 @@ install_zinit() {
 	if [ ! -d $ZINIT_HOME ]; then
 		mkdir ${ZINIT_HOME}
 	fi
+
+	command_exists git || {
+		error "git is not installed"
+			exit 1
+		}
+
 	git clone https://github.com/zdharma/zinit.git ${ZINIT_HOME}/bin
 }
 
-setup_zsh() {
-	if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
-		OLD_ZSHRC=~/.zshrc.backup-$(date +%Y-%m-%d_%H-%M-%S)
-		echo "${YELLOW}Found ~/.zshrc.${RESET} ${GREEN}Backing up to ${OLD_ZSHRC}${RESET}"
-		mv ~/.zshrc "$OLD_ZSHRC"
-	fi
+setup_rcm() {
+	echo ${GREEN}"Setup rcm ..."${RESET}
 
-	sed "/^export DOTFILES=/ c\\
-export DOTFILES=\"$DOTFILES\"
-" "$DOTFILES/templates/zshrc" > ~/.zshrc-temp
-	mv -f ~/.zshrc-temp ~/.zshrc
+	command_exists rcup || {
+		error "rcm is not installed"
+			exit 1
+		}
+
+	env RCRC=$DOTFILES/rcrc rcup
 }
 
 main() {
@@ -94,7 +98,8 @@ main() {
 
 	install_dotfiles
 	install_zinit
-	setup_zsh
+
+	setup_rcm
 
 	printf "${GREEN}"
 	cat <<-'EOF'
@@ -108,6 +113,8 @@ main() {
 		... is now installed!
 	EOF
 	printf "${RESET}"
+
+	exec $SHELL -l
 }
 
 main "$@"
