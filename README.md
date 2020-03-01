@@ -2,13 +2,21 @@
 
 ## Install
 
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/kironono/dotfiles/develop/tools/install.sh)"
+Install [rcm](https://github.com/thoughtbot/rcm):
+
+```sh
+brew tap thoughtbot/formulae
+brew install rcm
 ```
 
+Install dotfiles:
 
-zsh
-
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/kironono/dotfiles/develop/.tools/install.sh)"
 ```
-source $HOME/.dotfiles/zsh.sh
+
+Run rcup:
+
+```sh
+env RCRC=$HOME/dotfiles/rcrc rcup
 ```

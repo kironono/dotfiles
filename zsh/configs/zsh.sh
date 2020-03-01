@@ -5,8 +5,8 @@ export ZINIT_HOME=$HOME/.zinit
 # general {{{
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
-export PATH=$DOTFILES/bin:$PATH
-fpath=($DOTFILES/zsh/functions $fpath)
+# export PATH=$HOME/bin:$PATH
+fpath=($HOME/.zsh/functions $fpath)
 
 setopt no_beep
 # }}}
@@ -21,8 +21,8 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 # }}}
 
-source ${DOTFILES}/zsh/rc/history.zsh
-source ${DOTFILES}/zsh/rc/complement.zsh
-source ${DOTFILES}/zsh/rc/appearance.zsh
-source ${DOTFILES}/zsh/rc/prompt.zsh
-source ${DOTFILES}/zsh/rc/aliases.zsh
+source ${HOME}/.zsh/configs/history.zsh
+source ${HOME}/.zsh/configs/complement.zsh
+source ${HOME}/.zsh/configs/appearance.zsh
+source ${HOME}/.zsh/configs/prompt.zsh
+source ${HOME}/.zsh/configs/aliases.zsh
