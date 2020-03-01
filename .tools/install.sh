@@ -6,7 +6,7 @@ set -ue
 DOTFILES=${DOTFILES:-~/.dotfiles}
 REPO=${REPO:-kironono/dotfiles}
 REMOTE=${REMOTE:-https://github.com/${REPO}.git}
-BRANCH=${BRANCH:-develop}
+BRANCH=${BRANCH:-master}
 ZINIT_HOME=${ZINIT_HOME:-~/.zinit}
 
 
