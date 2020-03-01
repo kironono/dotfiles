@@ -15,8 +15,11 @@ Install dotfiles:
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/kironono/dotfiles/develop/.tools/install.sh)"
 ```
 
-Run rcup:
 
-```sh
-env RCRC=$HOME/dotfiles/rcrc rcup
+## Update
+
+From time to time you should pull down any updates to these dotfiles, and run
+
+```
+rcup
 ```
