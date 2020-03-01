@@ -114,6 +114,7 @@ main() {
 	EOF
 	printf "${RESET}"
 
+	echo ${GREEN}"Restarting $SHELL ..."${RESET}
 	exec $SHELL -l
 }
 

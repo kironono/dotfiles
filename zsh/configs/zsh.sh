@@ -26,3 +26,4 @@ source ${HOME}/.zsh/configs/complement.zsh
 source ${HOME}/.zsh/configs/appearance.zsh
 source ${HOME}/.zsh/configs/prompt.zsh
 source ${HOME}/.zsh/configs/aliases.zsh
+source ${HOME}/.zsh/configs/programming_support.zsh
