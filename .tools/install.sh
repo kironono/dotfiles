@@ -82,6 +82,11 @@ install_zinit() {
 	git clone https://github.com/zdharma/zinit.git ${ZINIT_HOME}/bin
 }
 
+setup_box() {
+	echo ${GREEN}"Setup box ..."${RESET}
+	sh ${DOTFILES}/.tools/box.sh
+}
+
 setup_rcm() {
 	echo ${GREEN}"Setup rcm ..."${RESET}
 
@@ -99,6 +104,7 @@ main() {
 	install_dotfiles
 	install_zinit
 
+	setup_box
 	setup_rcm
 
 	printf "${GREEN}"
