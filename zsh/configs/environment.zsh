@@ -1,3 +1,6 @@
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # node
 if [ -d "$HOME/.nvm" ]; then
 	export NVM_DIR="$HOME/.nvm"
