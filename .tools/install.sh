@@ -5,7 +5,7 @@ set -ue
 # Default settings
 DOTFILES=${DOTFILES:-~/.dotfiles}
 REPO=${REPO:-kironono/dotfiles}
-REMOTE=${REMOTE:-https://github.com/${REPO}.git}
+REMOTE=${REMOTE:-git@github.com:${REPO}.git}
 BRANCH=${BRANCH:-master}
 ZINIT_HOME=${ZINIT_HOME:-~/.zinit}
 
