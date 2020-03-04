@@ -1,5 +1,8 @@
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if $(cmd-exist fzf); then
+	export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --inline-info"
+fi
 
 # node
 if [ -d "$HOME/.nvm" ]; then

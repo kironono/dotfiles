@@ -27,3 +27,4 @@ source ${HOME}/.zsh/configs/appearance.zsh
 source ${HOME}/.zsh/configs/prompt.zsh
 source ${HOME}/.zsh/configs/aliases.zsh
 source ${HOME}/.zsh/configs/environment.zsh
+source ${HOME}/.zsh/configs/keybinds.zsh

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+fbr() {
+	local branches branch
+	branches=$(git branch -a) &&
+		branch=$(echo "$branches" | fzf +m --preview 'git gplog $(echo {} | awk "{print $1}" | sed "s/.* //")') &&
+		git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+fbr

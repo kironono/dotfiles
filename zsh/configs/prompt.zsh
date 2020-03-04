@@ -16,8 +16,8 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 
 # prompt left
-PROMPT='%{$fg[green]%}[%n%{$fg[blue]%}@%m]%{$reset_color%}'
-PROMPT=$PROMPT' ${vcs_info_msg_0_}%{${fg[white]}%}%}$%{${reset_color}%} '
+PROMPT='%{$fg[yellow]%}[%n%{$fg[green]%}@%m%{${fg[blue]}%}:%(4~,%-1~/.../%2~,%~)]%{$reset_color%}'
+PROMPT=$PROMPT' ${vcs_info_msg_0_}%{${fg[white]}%}%}%#%{${reset_color}%} '
 # prompt right
 RPROMPT='%{${fg[blue]}%}[%~]%{${reset_color}%}'
 # }}}
