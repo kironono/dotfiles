@@ -18,8 +18,6 @@ download() {
 }
 
 
-binary_available=1
-binary_error=""
 case "$archi" in
 	Darwin\ *64)     download bat-$version-x86_64-apple-darwin ;;
 	Linux\ *64)      download bat-$version-x86_64-unknown-linux-gnu ;;

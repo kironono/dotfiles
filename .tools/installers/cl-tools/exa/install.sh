@@ -1,7 +1,6 @@
 #!/bin/sh
 
 set -ue
-set +x
 
 SRC_DIR=$HOME/.local/src
 BIN_DIR=$HOME/.bin
