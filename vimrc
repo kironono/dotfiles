@@ -24,6 +24,8 @@ Plug 'tpope/vim-endwise'
 " html
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
+" slim
+Plug 'slim-template/vim-slim'
 " go
 Plug 'fatih/vim-go'
 Plug 'vim-jp/vim-go-extra'
