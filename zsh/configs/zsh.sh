@@ -5,6 +5,7 @@ export ZINIT_HOME=$HOME/.zinit
 # general {{{
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
+export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.bin:$PATH
 fpath=($HOME/.zsh/functions $fpath)
 
