@@ -45,6 +45,8 @@ Plug 'preservim/nerdtree'
 Plug 'tomtom/tcomment_vim'
 " fugitive.vim: A Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
+" A Vim plugin which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks.
+Plug 'airblade/vim-gitgutter'
 " Fuzzy file, buffer, mru, tag, etc finder.
 Plug 'kien/ctrlp.vim'
 
@@ -55,6 +57,9 @@ call plug#end()
 
 
 " vimrc:basic {{{
+" updatetime
+set updatetime=500
+
 " release autogroup in MyAutoCmd
 augroup MyAutoCmd
   autocmd!
@@ -190,9 +195,6 @@ nnoremap <Leader>t :tabnew<CR>
 nnoremap <Leader>w :tabclose<CR>
 nnoremap <Leader>n :tabnext<CR>
 nnoremap <Leader>p :tabprev<CR>
-
-" ファイルとバッファ
-nnoremap <C-U><C-U> :Unite buffer file_mru<CR>
 
 " paste モードをトグル
 set pastetoggle=<F2>
