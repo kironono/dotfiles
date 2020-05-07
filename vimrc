@@ -39,12 +39,14 @@ Plug 'ekalinin/Dockerfile.vim'
 " --------
 " Utility
 " --------
-" explorer
-Plug 'scrooloose/nerdtree'
-" comment
+" A tree explorer plugin for vim.
+Plug 'preservim/nerdtree'
+" An extensible & universal comment vim-plugin that also handles embedded filetypes
 Plug 'tomtom/tcomment_vim'
-" git
+" fugitive.vim: A Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
+" Fuzzy file, buffer, mru, tag, etc finder.
+Plug 'kien/ctrlp.vim'
 
 
 " Initialize plugin system
