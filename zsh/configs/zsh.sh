@@ -7,7 +7,7 @@ export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.bin:$PATH
-fpath=($HOME/.zsh/functions $fpath)
+FPATH="${HOME}/.zsh/functions:${FPATH}"
 
 setopt no_beep
 # }}}
