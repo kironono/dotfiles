@@ -9,7 +9,7 @@ GIT_PS1_SHOWSTASHSTATE=1
 precmd () { git-prompt }
 
 # prompt left
-PROMPT='%{$fg[yellow]%}[%n%{$fg[green]%}@%m%{${fg[blue]}%}:%(4~,%-1~/.../%2~,%~)]%{$reset_color%}'
+PROMPT='%{$fg[yellow]%}%n%{$fg[green]%}@%m%{${fg[blue]}%} %(4~,%-1~/.../%2~,%~)%{$reset_color%}'
 PROMPT=$PROMPT'%{$fg[red]%}$(__git_ps1)
 %{${fg[magenta]}%}%}❯%{${reset_color}%} '
 # prompt right
