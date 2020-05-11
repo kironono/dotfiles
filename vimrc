@@ -36,6 +36,16 @@ Plug 'vim-scripts/nginx.vim'
 " docker
 Plug 'ekalinin/Dockerfile.vim'
 
+" ---
+" LSP
+" ---
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-lsp-icons'
+
 " --------
 " Utility
 " --------
