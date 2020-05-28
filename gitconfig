@@ -9,6 +9,7 @@
 [alias]
 	st = status
 	ci = commit
+	co = checkout
 	dif = diff
 	difc = diff --cached
 	fbr = fbranch
