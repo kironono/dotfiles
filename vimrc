@@ -36,6 +36,8 @@ Plug 'vim-scripts/nginx.vim'
 " docker
 Plug 'ekalinin/Dockerfile.vim'
 
+Plug 'machakann/vim-highlightedyank'
+
 " ---
 " LSP
 " ---
