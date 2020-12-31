@@ -155,10 +155,10 @@ augroup highlightIdegraphicSpace
 augroup END
 
 " SpecialKeyをハイライトする
-augroup highlightSpecialKey
-  autocmd!
-  autocmd ColorScheme * highlight SpecialKey term=underline ctermbg=DarkRed guibg=DarkRed
-augroup END
+" augroup highlightSpecialKey
+"   autocmd!
+"   autocmd ColorScheme * highlight SpecialKey term=underline ctermbg=DarkRed guibg=DarkRed
+" augroup END
 
 
 "------------------
