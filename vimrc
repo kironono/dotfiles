@@ -1,3 +1,13 @@
+
+" local conf
+function! VimrcLocalCheck()
+	if filereadable("~/.vimrc.local")
+		source ~/.vimrc.local
+	endif
+endfunction
+call VimrcLocalCheck()
+
+
 " vimrc:plugin {{{
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
