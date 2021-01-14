@@ -61,7 +61,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " Fuzzy file, buffer, mru, tag, etc finder.
 Plug 'kien/ctrlp.vim'
-
+" Run tests easily in any language, with any framework
+Plug 'davidpdrsn/vim-spectacular'
 
 " Initialize plugin system
 call plug#end()
@@ -264,6 +265,10 @@ if &diff
     autocmd VimEnter * execute "%SDChar"
   augroup END
 endif
+
+" davidpdrsn/vim-spectacular
+map <leader>t :write\|:call spectacular#run_tests()<cr>
+
 " }}}
 
 
@@ -279,6 +284,9 @@ autocmd FileType rust set ts=4 sw=4 expandtab
 autocmd BufNewFile,BufRead *.jinja2 set filetype=html
 autocmd BufNewFile,BufRead *.tpl set filetype=html
 autocmd BufNewFile,BufRead *.jbuilder set filetype=ruby
+
+" davidpdrsn/vim-spectacular
+call spectacular#add_test_runner('rust', 'cargo check && cargo check --tests && cargo check --examples | -', '')
 " }}}
 
 
