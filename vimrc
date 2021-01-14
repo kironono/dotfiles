@@ -1,3 +1,13 @@
+
+" local conf
+function! VimrcLocalCheck()
+	if filereadable("~/.vimrc.local")
+		source ~/.vimrc.local
+	endif
+endfunction
+call VimrcLocalCheck()
+
+
 " vimrc:plugin {{{
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
@@ -326,4 +336,6 @@ let g:pymode_rope = 0
 let g:pymode_virtualenv = 1
 let g:pymode_lint_ignore = "E501,E711,E712,C901"
 let g:pymode_lint_on_fly = 0
+
+let g:rustfmt_autosave = 1
 " }}}
