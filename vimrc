@@ -170,6 +170,9 @@ inoremap jj <Esc>
 inoremap " ""<Left>
 inoremap ' ''<Left>
 
+" セミコロンを末尾に入力して改行
+inoremap ;; <C-o>$;<CR>
+
 " ESCを二回押すことでハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
 
