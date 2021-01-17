@@ -51,12 +51,7 @@ Plug 'machakann/vim-highlightedyank'
 " ---
 " LSP
 " ---
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'mattn/vim-lsp-icons'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " --------
 " Utility
