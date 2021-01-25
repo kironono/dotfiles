@@ -255,6 +255,12 @@ function! s:ChangeCurrentDir(directory, bang)
     endif
 endfunction
 
+augroup HTMLANDXML
+  autocmd!
+  autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
+  autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
+augroup END
+
 augroup vimrc-checktime
   autocmd!
   autocmd WinEnter * checktime
