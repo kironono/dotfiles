@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "coc-html": ">=1.4.1",
-    "coc-rust-analyzer": ">=0.28.0"
+    "coc-rust-analyzer": ">=0.29.0",
+    "coc-vetur": ">=1.2.3"
   }
 }
