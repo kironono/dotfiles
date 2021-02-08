@@ -27,8 +27,6 @@ Plug 'vim-airline/vim-airline-themes'
 " ---------------------
 " indent
 Plug 'nathanaelkane/vim-indent-guides'
-" python
-Plug 'klen/python-mode'
 " ruby
 Plug 'tpope/vim-endwise'
 " html
@@ -41,6 +39,8 @@ Plug 'fatih/vim-go'
 Plug 'vim-jp/vim-go-extra'
 " rust
 Plug 'rust-lang/rust.vim'
+" vuejs
+Plug 'posva/vim-vue'
 " nginx
 Plug 'vim-scripts/nginx.vim'
 " docker
@@ -289,6 +289,7 @@ map <leader>t :write\|:call spectacular#run_tests()<cr>
 " vimrc:filetype {{{
 autocmd FileType javascript set ts=2 sw=2 expandtab
 autocmd FileType html set ts=2 sw=2 expandtab
+autocmd FileType vue set ts=2 sw=2 expandtab
 autocmd FileType yaml set ts=2 sw=2 expandtab
 autocmd FileType json set ts=2 sw=2 expandtab
 autocmd FileType ruby set ts=2 sw=2 expandtab
@@ -333,13 +334,6 @@ let g:indent_guides_color_change_percent = 30
 let g:indent_guides_guide_size = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg = 238
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg = 237
-
-" python-mode
-let g:pymode_folding = 0
-let g:pymode_rope = 0
-let g:pymode_virtualenv = 1
-let g:pymode_lint_ignore = "E501,E711,E712,C901"
-let g:pymode_lint_on_fly = 0
 
 let g:rustfmt_autosave = 1
 " }}}
