@@ -3,7 +3,7 @@
     "coc-css": ">=1.2.6",
     "coc-html": ">=1.4.1",
     "coc-pyright": ">=1.1.109",
-    "coc-rust-analyzer": ">=0.30.0",
+    "coc-rust-analyzer": ">=0.32.0",
     "coc-vetur": ">=1.2.3"
   }
 }
