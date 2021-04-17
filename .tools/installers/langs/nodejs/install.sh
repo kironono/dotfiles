@@ -2,8 +2,10 @@
 
 set -ue
 
-export NVM_DIR=$HOME/.nvm
+export NODENV_DIR="${HOME}/.nodenv"
 
-if [ ! -d "$NVM_DIR" ]; then
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+if [ ! -d "${NODENV_DIR}" ]; then
+    git clone https://github.com/nodenv/nodenv.git "${NODENV_DIR}"
+    mkdir -p "${NODENV_DIR}"/plugins
+    git clone https://github.com/nodenv/node-build.git "${NODENV_DIR}"/plugins/node-build
 fi
