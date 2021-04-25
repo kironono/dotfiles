@@ -34,3 +34,6 @@ set completeopt=menuone,noinsert,noselect
 
 " Avoid showing extra messages when using completion
 set shortmess+=c
+
+" Init lua
+lua require('init')
