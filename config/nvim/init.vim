@@ -6,6 +6,7 @@ call plug#begin(stdpath('data') . '/plugged')
 " color and theme
 " ----
 Plug 'jonathanfilip/vim-lucius'
+Plug 'folke/tokyonight.nvim'
 
 " ----
 " syntax and highlight
@@ -13,7 +14,7 @@ Plug 'jonathanfilip/vim-lucius'
 " highlight
 Plug 'machakann/vim-highlightedyank'
 " indent
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 " ruby
 Plug 'tpope/vim-endwise'
 " rust
@@ -23,6 +24,7 @@ Plug 'rust-lang/rust.vim'
 " LSP
 " ----
 Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-lua/completion-nvim'
 
@@ -38,6 +40,9 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
+
+" Init lua
+lua require('init')
 
 " ----
 " Basic
@@ -66,6 +71,13 @@ set number
 set wrap
 set ruler
 
+" Theme
+set t_Co=256
+set background=dark
+let g:lucius_no_term_bg = 1
+" colorscheme lucius
+colorscheme tokyonight
+
 " Search
 set ignorecase
 set smartcase
@@ -77,12 +89,12 @@ set nowritebackup
 set nobackup
 set noswapfile
 
-syntax enable
-filetype plugin indent on
-
 " Keymaps
+let mapleader = "\<Space>"
 noremap <Space>s :source $MYVIMRC<CR>
 noremap <Space>w :<C-u>w<CR>
+
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 " Set completeopt to have a better completion experience
 " :help completeopt
@@ -96,11 +108,17 @@ set completeopt-=preview
 " Avoid showing extra messages when using completion
 set shortmess+=c
 
-" Color
-set t_Co=256
-set background=dark
-let g:lucius_no_term_bg = 1
-colorscheme lucius
+" vim-indent-guides
+" let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_start_level = 2
+" let g:indent_guides_auto_colors = 0
+" let g:indent_guides_color_change_percent = 30
+" let g:indent_guides_guide_size = 1
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg = 238
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg = 237
 
-" Init lua
-lua require('init')
+" vim-rust
+let g:rustfmt_autosave = 1
+
+syntax enable
+filetype plugin indent on
