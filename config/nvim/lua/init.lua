@@ -6,7 +6,12 @@ require('lualine').setup{
 
 local nvim_lsp = require("lspconfig")
 local saga = require 'lspsaga'
-saga.init_lsp_saga()
+saga.init_lsp_saga {
+  error_sign = "ⓧ",
+  warn_sign = "⚠",
+  hint_sign = "ⓘ",
+  infor_sign = "ⓘ",
+}
 
 -- function to attach completion when setting up lsp
 local on_attach = function(client)

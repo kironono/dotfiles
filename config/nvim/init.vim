@@ -36,6 +36,8 @@ Plug 'preservim/nerdtree'
 " An extensible & universal comment vim-plugin that also handles embedded filetypes
 Plug 'tomtom/tcomment_vim'
 
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
 Plug 'hoob3rt/lualine.nvim'
 Plug 'ryanoasis/vim-devicons'
 
@@ -51,6 +53,7 @@ set encoding=UTF-8
 set updatetime=300
 set splitbelow
 set splitright
+set wildmenu wildmode=list:longest,full
 
 " Editing
 set expandtab
@@ -68,8 +71,10 @@ set matchpairs& matchpairs+=<:>
 " Display
 set list
 set number
+set relativenumber
 set wrap
 set ruler
+set signcolumn=number
 
 " Theme
 set t_Co=256
