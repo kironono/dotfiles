@@ -4,6 +4,11 @@ if $(cmd-exist fzf); then
 	export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --inline-info"
 fi
 
+# direnv
+if $(cmd-exist direnv); then
+	eval "$(direnv hook zsh)"
+fi
+
 # node
 if [ -d "${HOME}/.nodenv" ]; then
 	export PATH="$HOME/.nodenv/bin:$PATH"
