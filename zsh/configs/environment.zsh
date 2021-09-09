@@ -10,9 +10,9 @@ if $(cmd-exist direnv); then
 fi
 
 # node
-if [ -d "${HOME}/.nodenv" ]; then
-	export PATH="$HOME/.nodenv/bin:$PATH"
-	eval "$(nodenv init -)"
+if [ -d "${HOME}/.volta" ]; then
+	export VOLTA_HOME="$HOME/.volta"
+	export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
 # python
