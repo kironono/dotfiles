@@ -15,6 +15,13 @@ if [ -d "${HOME}/.volta" ]; then
 	export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
+# rbenv
+if [ -d "${HOME}/.rbenv" ]; then
+	export RBENV_HOME="$HOME/.rbenv"
+	export PATH="$RBENV_HOME/bin:$PATH"
+	eval "$(rbenv init - zsh)"
+fi
+
 # python
 if [ -d "$HOME/.pyenv" ]; then
 	export PYENV_ROOT="$HOME/.pyenv"
