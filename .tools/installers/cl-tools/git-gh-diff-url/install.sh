@@ -14,7 +14,6 @@ download() {
     pushd ${SRC_DIR}
     curl -fL https://github.com/magicdrive/git-gh-diff-url/archive/refs/tags/v${version}.tar.gz | tar -xzf -
     pushd "git-gh-diff-url-${version}"
-    cp Makefile Makefile.back
     sed -i.bak "s|PREFIX=\${HOME}/local|PREFIX=${HOME}/.local|" Makefile
     make install
 }
