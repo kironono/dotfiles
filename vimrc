@@ -45,13 +45,18 @@ Plug 'posva/vim-vue'
 Plug 'vim-scripts/nginx.vim'
 " docker
 Plug 'ekalinin/Dockerfile.vim'
+" python
+Plug 'vim-python/python-syntax'
 
 Plug 'machakann/vim-highlightedyank'
 
 " ---
 " LSP
 " ---
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " --------
 " Utility
@@ -60,8 +65,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 " An extensible & universal comment vim-plugin that also handles embedded filetypes
 Plug 'tomtom/tcomment_vim'
-" fugitive.vim: A Git wrapper so awesome, it should be illegal
-Plug 'tpope/vim-fugitive'
 " A Vim plugin which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks.
 Plug 'airblade/vim-gitgutter'
 " Fuzzy file, buffer, mru, tag, etc finder.
@@ -101,7 +104,6 @@ cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 "----------
 set shiftround          " '<'や'>'でインデントする際に'shiftwidth'の倍数に丸める
 set infercase           " 補完時に大文字小文字を区別しない
-"set virtualedit=all     " カーソルを文字が存在しない部分でも動けるようにする
 set hidden              " バッファを閉じる代わりに隠す（Undo履歴を残すため）
 set switchbuf=useopen   " 新しく開く代わりにすでに開いてあるバッファを開く
 set showmatch           " 対応する括弧などをハイライト表示する
@@ -127,7 +129,6 @@ set number              " 行番号の表示
 set wrap                " 長いテキストの折り返し
 set textwidth=0         " 自動的に改行が入るのを無効化
 set colorcolumn=80      " その代わり80文字目にラインを入れる
-" set cursorline          " カーソル行にラインを表示
 set laststatus=2        " ステータスラインを常に表示
 set showtabline=2       " タブラインを常に表示
 set scrolloff=5         " スクロールのオフセット
@@ -163,9 +164,6 @@ augroup END
 " キーマップリーダー
 let mapleader = ","
 
-" 入力モード中に素早くjjと入力した場合はESCとみなす
-inoremap jj <Esc>
-
 " クオートを入力した場合、対応するクオートを自動で入力
 inoremap " ""<Left>
 inoremap ' ''<Left>
@@ -200,12 +198,6 @@ vnoremap v $h
 " TABにて対応ペアにジャンプ
 nnoremap <Tab> %
 vnoremap <Tab> %
-
-" Ctrl + hjkl でウィンドウ間を移動
-" map <C-h> <C-w>h
-" map <C-j> <C-w>j
-" map <C-k> <C-w>k
-" map <C-l> <C-w>l
 
 nnoremap <Leader>k <C-w><C-+>
 nnoremap <Leader>j <C-w><C-->
@@ -336,4 +328,12 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg = 238
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg = 237
 
 let g:rustfmt_autosave = 1
+
+let g:python_highlight_all = 1
+autocmd FileType python setl autoindent
+autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+" LSP
+let g:lsp_diagnostics_echo_cursor = 1
 " }}}
