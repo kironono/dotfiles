@@ -1,13 +1,3 @@
-
-" local conf
-function! VimrcLocalCheck()
-	if filereadable("~/.vimrc.local")
-		source ~/.vimrc.local
-	endif
-endfunction
-call VimrcLocalCheck()
-
-
 " vimrc:plugin {{{
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
@@ -191,9 +181,6 @@ nnoremap g# g#zz
 " j, k による移動を折り返されたテキストでも自然に振る舞うように変更
 nnoremap j gj
 nnoremap k gk
-
-" vを二回で行末まで選択
-vnoremap v $h
 
 " TABにて対応ペアにジャンプ
 nnoremap <Tab> %
