@@ -2,7 +2,7 @@
 # list {{{
 if $(cmd-exist exa); then
 	alias ls='exa'
-	alias ll='ls -lgh'
+	alias ll='ls -lagh'
 	alias la='ls -lagh --git'
 else
 	alias ls='ls -G'
