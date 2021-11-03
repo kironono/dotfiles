@@ -43,10 +43,10 @@ Plug 'machakann/vim-highlightedyank'
 " ---
 " LSP
 " ---
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
 
 " --------
 " Utility
@@ -262,6 +262,8 @@ endif
 " davidpdrsn/vim-spectacular
 map <leader>t :write\|:call spectacular#run_tests()<cr>
 
+let g:asyncomplete_auto_popup = 1
+set completeopt=menuone,noinsert,noselect,preview
 " }}}
 
 
@@ -322,5 +324,6 @@ autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,exc
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 " LSP
+" let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 " }}}
