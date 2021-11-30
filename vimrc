@@ -61,6 +61,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kien/ctrlp.vim'
 " Run tests easily in any language, with any framework
 Plug 'davidpdrsn/vim-spectacular'
+" Auto close parentheses and repeat by dot dot dot...
+Plug 'cohama/lexima.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -154,12 +156,8 @@ augroup END
 " キーマップリーダー
 let mapleader = ","
 
-" クオートを入力した場合、対応するクオートを自動で入力
-inoremap " ""<Left>
-inoremap ' ''<Left>
-
-" セミコロンを末尾に入力して改行
-inoremap ;; <C-o>$;<CR>
+" insert ;
+inoremap ;; <C-o>$;
 
 " ESCを二回押すことでハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
