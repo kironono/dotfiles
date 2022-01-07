@@ -68,7 +68,6 @@ Plug 'cohama/lexima.vim'
 call plug#end()
 " }}}
 
-
 " vimrc:basic {{{
 " updatetime
 set updatetime=500
@@ -287,13 +286,6 @@ call spectacular#add_test_runner('rust', 'cargo check && cargo check --tests && 
 " vimrc:basic {{{
 " Vimのデフォルト設定を利用する
 set nocompatible
-
-" 矢印キーで入力するとA B C Dが入力される問題を解決
-" http://cohama.hateblo.jp/entry/20120129/1327817462
-imap OA <Up>
-imap OB <Down>
-imap OC <Right>
-imap OD <Left>
 
 " シンタックスハイライト
 syntax enable
