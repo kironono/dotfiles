@@ -63,6 +63,8 @@ Plug 'kien/ctrlp.vim'
 Plug 'davidpdrsn/vim-spectacular'
 " Auto close parentheses and repeat by dot dot dot...
 Plug 'cohama/lexima.vim'
+" UltiSnips - The ultimate snippet solution for Vim.
+Plug 'SirVer/ultisnips'
 
 " Initialize plugin system
 call plug#end()
