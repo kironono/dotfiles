@@ -10,5 +10,5 @@ if [ ! -d "$PYENV_DIR" ]; then
 fi
 
 if [ ! -d "$POETRY_DIR" ]; then
-    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python - --no-modify-path
+    curl -sSL https://install.python-poetry.org | python3 -
 fi
