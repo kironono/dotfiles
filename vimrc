@@ -65,6 +65,10 @@ Plug 'davidpdrsn/vim-spectacular'
 Plug 'cohama/lexima.vim'
 " UltiSnips - The ultimate snippet solution for Vim.
 Plug 'SirVer/ultisnips'
+" Editorconfig
+Plug 'editorconfig/editorconfig-vim'
+" Copilot
+Plug 'github/copilot.vim'
 
 " Initialize plugin system
 call plug#end()
