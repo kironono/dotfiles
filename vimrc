@@ -322,4 +322,7 @@ autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 " LSP
 " let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
+
+" copilot
+let g:copilot_filetypes = { 'gitcommit': v:true }
 " }}}
