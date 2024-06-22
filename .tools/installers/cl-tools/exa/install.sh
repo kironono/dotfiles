@@ -5,7 +5,7 @@ set -ue
 SRC_DIR=$HOME/.local/src
 BIN_DIR=$HOME/.bin
 
-version=0.9.0
+version=0.10.1
 archi=$(uname -sm)
 
 download() {
@@ -13,11 +13,11 @@ download() {
 
 	pushd ${SRC_DIR}
 
-	local url=https://github.com/ogham/exa/releases/download/v${version}/${1}-${version}.zip
+	local url=https://github.com/ogham/exa/releases/download/v${version}/${1}-v${version}.zip
 	local temp=${SRC_DIR}/exa.zip
 
 	curl -fLo "$temp" $url && unzip -o "$temp" && rm -f "$temp"
-	cp ${1} ${BIN_DIR}/exa
+	cp bin/exa ${BIN_DIR}/exa
 }
 
 case "$archi" in

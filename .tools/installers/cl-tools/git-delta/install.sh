@@ -5,7 +5,7 @@ set -ue
 SRC_DIR=$HOME/.local/src
 BIN_DIR=$HOME/.bin
 
-version=0.8.3
+version=0.17.0
 archi=$(uname -sm)
 
 
@@ -19,7 +19,8 @@ download() {
 
 
 case "$archi" in
-    Darwin\ *64)     download delta-$version-x86_64-apple-darwin ;;
+    Darwin\ x86_64)  download delta-$version-x86_64-apple-darwin ;;
+    Darwin\ arm64)   download delta-$version-aarch64-apple-darwin ;;
     Linux\ *64)      download delta-$version-x86_64-unknown-linux-gnu ;;
     *)               echo "not supported!" && exit 1 ;;
 esac

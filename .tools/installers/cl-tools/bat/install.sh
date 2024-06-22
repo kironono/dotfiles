@@ -5,7 +5,7 @@ set -ue
 SRC_DIR=$HOME/.local/src
 BIN_DIR=$HOME/.bin
 
-version=v0.12.1
+version=v0.24.0
 archi=$(uname -sm)
 
 
