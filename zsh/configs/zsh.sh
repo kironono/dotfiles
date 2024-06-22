@@ -14,7 +14,7 @@ setopt no_beep
 # }}}
 
 # zinit {{{
-source ${ZINIT_HOME}/bin/zinit.zsh
+source ${ZINIT_HOME}/bin/zi.zsh
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
