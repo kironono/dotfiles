@@ -36,7 +36,6 @@
     minus-emph-style = syntax "#833d3d"
     plus-style = syntax "#293732"
     plus-emph-style = syntax "#345d3c"
-    syntax-theme = Github
 
 [color]
     ui = auto
